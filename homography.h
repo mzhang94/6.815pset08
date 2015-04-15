@@ -15,6 +15,7 @@ using namespace std;
 // homographies
 void applyhomography(const Image &source, Image &out, Matrix &H, bool bilinear=false);
 void applyhomographyFast(const Image &source, Image &out, Matrix &H, bool bilinear);
+vector<float> applyHomographyPoint(float x, float y, Matrix &H);
 Matrix homogenize(Matrix &v);
 Matrix computeHomography(const float listOfPairs[4][2][3]);
 void addConstraint(Matrix &systm,  int i, const float constr[2][3]);
