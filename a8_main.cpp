@@ -109,8 +109,8 @@ void testAutoStitchNCastle() {
 int main() {
 
   // Blending
-  testBlendingWeight();
-  testApplyHomographyBlend();
+  //testBlendingWeight();
+  //testApplyHomographyBlend();
   testStitchBlendStata();
 
   // AutoStitch with Blending

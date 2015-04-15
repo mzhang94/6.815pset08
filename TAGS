@@ -1,0 +1,223 @@
+
+Image.h,660
+#define __IMAGE__H2,20
+using namespace std;12,210
+class Image 15,266
+  const std::string & name(Image::name30,889
+  int dimensions(Image::dimensions33,1005
+  int stride(Image::stride37,1211
+  int width(Image::width39,1267
+  int height(Image::height40,1341
+  int channels(Image::channels41,1414
+  int extent(Image::extent43,1488
+  static int debugWriteNumber;Image::debugWriteNumber67,2565
+  unsigned int dims;Image::dims83,3034
+  unsigned int dim_values[Image::dim_values84,3080
+  unsigned int stride_[Image::stride_85,3137
+  std::string image_name;Image::image_name86,3175
+  std::vector<float> image_data;Image::image_data90,3373
+
+ImageException.h,710
+#define __IMAGEEXCEPTION__H2,29
+class DivideByZeroException 7,104
+ DivideByZeroException(DivideByZeroException::DivideByZeroException9,173
+class MismatchedDimensionsException 13,250
+ MismatchedDimensionsException(MismatchedDimensionsException::MismatchedDimensionsException15,327
+class NegativeDimensionException 18,429
+ NegativeDimensionException(NegativeDimensionException::NegativeDimensionException20,503
+class ChannelException 23,605
+  ChannelException(ChannelException::ChannelException25,669
+class OutOfBoundsException 28,784
+  OutOfBoundsException(OutOfBoundsException::OutOfBoundsException30,852
+class InvalidArgument 33,945
+ InvalidArgument(InvalidArgument::InvalidArgument35,1008
+
+basicImageManipulation.h,118
+#define __basicImageManipulation__h2,37
+using namespace std;4,76
+static const float weight_init[weight_init13,331
+
+blending.h,72
+#define __blending__h2,23
+using namespace std;4,48
+#define pi 16,292
+
+filtering.h,202
+#define __filtering__h2,24
+using namespace std;4,50
+class Filter 15,209
+    std::vector<float> kernel;Filter::kernel19,238
+    int width;Filter::width20,270
+    int height;Filter::height21,286
+
+homography.h,55
+#define __homography__h2,25
+using namespace std;4,52
+
+lodepng.h,6575
+#define LODEPNG_H27,958
+#define LODEPNG_VERSION_STRING 36,1101
+#define LODEPNG_COMPILE_ZLIB48,1674
+#define LODEPNG_COMPILE_PNG52,1777
+#define LODEPNG_COMPILE_DECODER56,1892
+#define LODEPNG_COMPILE_ENCODER60,2011
+#define LODEPNG_COMPILE_DISK64,2155
+#define LODEPNG_COMPILE_ANCILLARY_CHUNKS68,2332
+#define LODEPNG_COMPILE_ERROR_TEXT72,2490
+#define LODEPNG_COMPILE_ALLOCATORS78,2787
+#define LODEPNG_COMPILE_CPP83,2979
+typedef enum LodePNGColorType89,3100
+  LCT_GREY 91,3134
+  LCT_RGB 92,3181
+  LCT_PALETTE 93,3215
+  LCT_GREY_ALPHA 94,3260
+  LCT_RGBA 95,3318
+} LodePNGColorType;96,3363
+typedef struct LodePNGDecompressSettings LodePNGDecompressSettings;253,11203
+struct LodePNGDecompressSettings254,11272
+  unsigned ignore_adler32;LodePNGDecompressSettings::ignore_adler32256,11309
+  const void* custom_context;LodePNGDecompressSettings::custom_context269,12046
+typedef struct LodePNGCompressSettings LodePNGCompressSettings;281,12478
+struct LodePNGCompressSettings 282,12543
+  unsigned btype;LodePNGCompressSettings::btype285,12630
+  unsigned use_lz77;LodePNGCompressSettings::use_lz77286,12746
+  unsigned windowsize;LodePNGCompressSettings::windowsize287,12836
+  unsigned minmatch;LodePNGCompressSettings::minmatch288,12956
+  unsigned nicematch;LodePNGCompressSettings::nicematch289,13065
+  unsigned lazymatching;LodePNGCompressSettings::lazymatching290,13178
+  const void* custom_context;LodePNGCompressSettings::custom_context303,13895
+typedef struct LodePNGColorMode316,14421
+  LodePNGColorType colortype;LodePNGColorMode::colortype319,14478
+  unsigned bitdepth;LodePNGColorMode::bitdepth320,14587
+  unsigned char* palette;LodePNGColorMode::palette335,15292
+  size_t palettesize;LodePNGColorMode::palettesize336,15405
+  unsigned key_defined;LodePNGColorMode::key_defined349,15937
+  unsigned key_r;LodePNGColorMode::key_r350,16020
+  unsigned key_g;LodePNGColorMode::key_g351,16086
+  unsigned key_b;LodePNGColorMode::key_b352,16144
+} LodePNGColorMode;353,16201
+typedef struct LodePNGTime393,18429
+  unsigned year;LodePNGTime::year395,18460
+  unsigned month;LodePNGTime::month396,18508
+  unsigned day;LodePNGTime::day397,18538
+  unsigned hour;LodePNGTime::hour398,18568
+  unsigned minute;LodePNGTime::minute399,18598
+  unsigned second;LodePNGTime::second400,18628
+} LodePNGTime;401,18686
+typedef struct LodePNGInfo405,18820
+  unsigned compression_method;LodePNGInfo::compression_method408,18919
+  unsigned filter_method;LodePNGInfo::filter_method409,19005
+  unsigned interlace_method;LodePNGInfo::interlace_method410,19075
+  LodePNGColorMode color;LodePNGInfo::color411,19148
+  unsigned background_defined;LodePNGInfo::background_defined425,19835
+  unsigned background_r;LodePNGInfo::background_r426,19910
+  unsigned background_g;LodePNGInfo::background_g427,19990
+  unsigned background_b;LodePNGInfo::background_b428,20072
+  size_t text_num;LodePNGInfo::text_num443,20752
+  char** text_keys;LodePNGInfo::text_keys444,20855
+  char** text_strings;LodePNGInfo::text_strings445,20925
+  size_t itext_num;LodePNGInfo::itext_num452,21127
+  char** itext_keys;LodePNGInfo::itext_keys453,21198
+  char** itext_langtags;LodePNGInfo::itext_langtags454,21279
+  char** itext_transkeys;LodePNGInfo::itext_transkeys455,21394
+  char** itext_strings;LodePNGInfo::itext_strings456,21489
+  unsigned time_defined;LodePNGInfo::time_defined459,21590
+  LodePNGTime time;LodePNGInfo::time460,21671
+  unsigned phys_defined;LodePNGInfo::phys_defined463,21719
+  unsigned phys_x;LodePNGInfo::phys_x464,21837
+  unsigned phys_y;LodePNGInfo::phys_y465,21892
+  unsigned phys_unit;LodePNGInfo::phys_unit466,21947
+  unsigned char* unknown_chunks_data[LodePNGInfo::unknown_chunks_data477,22509
+  size_t unknown_chunks_size[LodePNGInfo::unknown_chunks_size478,22551
+} LodePNGInfo;480,22692
+typedef struct LodePNGDecoderSettings517,24665
+  LodePNGDecompressSettings zlibsettings;LodePNGDecoderSettings::zlibsettings519,24707
+  unsigned ignore_crc;LodePNGDecoderSettings::ignore_crc521,24807
+  unsigned color_convert;LodePNGDecoderSettings::color_convert523,24858
+  unsigned read_text_chunks;LodePNGDecoderSettings::read_text_chunks526,25000
+  unsigned remember_unknown_chunks;LodePNGDecoderSettings::remember_unknown_chunks528,25221
+} LodePNGDecoderSettings;530,25303
+typedef enum LodePNGFilterStrategy537,25570
+  LFS_ZERO,LodePNGFilterStrategy::LFS_ZERO540,25637
+  LFS_MINSUM,LodePNGFilterStrategy::LFS_MINSUM542,25743
+  LFS_ENTROPY,LodePNGFilterStrategy::LFS_ENTROPY545,25904
+  LFS_BRUTE_FORCE,LodePNGFilterStrategy::LFS_BRUTE_FORCE550,26094
+  LFS_PREDEFINEDLodePNGFilterStrategy::LFS_PREDEFINED552,26198
+} LodePNGFilterStrategy;553,26216
+typedef struct LodePNGColorProfile557,26468
+  unsigned colored;LodePNGColorProfile::colored559,26507
+  unsigned key;LodePNGColorProfile::key560,26546
+  unsigned short key_r;LodePNGColorProfile::key_r561,26653
+  unsigned short key_g;LodePNGColorProfile::key_g562,26740
+  unsigned short key_b;LodePNGColorProfile::key_b563,26765
+  unsigned alpha;LodePNGColorProfile::alpha564,26790
+  unsigned numcolors;LodePNGColorProfile::numcolors565,26853
+  unsigned char palette[LodePNGColorProfile::palette566,26934
+  unsigned bits;LodePNGColorProfile::bits567,27036
+} LodePNGColorProfile;568,27158
+typedef struct LodePNGEncoderSettings583,27952
+  LodePNGCompressSettings zlibsettings;LodePNGEncoderSettings::zlibsettings585,27994
+  unsigned auto_convert;LodePNGEncoderSettings::auto_convert587,28097
+  unsigned filter_palette_zero;LodePNGEncoderSettings::filter_palette_zero593,28492
+  LodePNGFilterStrategy filter_strategy;LodePNGEncoderSettings::filter_strategy596,28708
+  const unsigned char* predefined_filters;LodePNGEncoderSettings::predefined_filters601,29118
+  unsigned force_palette;LodePNGEncoderSettings::force_palette605,29295
+  unsigned add_id;LodePNGEncoderSettings::add_id608,29436
+  unsigned text_compression;LodePNGEncoderSettings::text_compression610,29556
+} LodePNGEncoderSettings;612,29631
+typedef struct LodePNGState620,29922
+  LodePNGDecoderSettings decoder;LodePNGState::decoder623,29986
+  LodePNGEncoderSettings encoder;LodePNGState::encoder626,30115
+  LodePNGColorMode info_raw;LodePNGState::info_raw628,30212
+  LodePNGInfo info_png;LodePNGState::info_png629,30319
+  unsigned error;LodePNGState::error630,30394
+  virtual ~LodePNGState(LodePNGState::~LodePNGState633,30479
+} LodePNGState;635,30516
+namespace lodepng815,38506
+class State lodepng::State818,38556
+
+matrix.h,835
+#define _MATRIX_H_2,20
+static int GetMinor(10,173
+static double CalcDeterminant(37,845
+static void MatrixInversion(72,1774
+class Matrix114,2888
+    int row;Matrix::row117,2915
+    int col;Matrix::col118,2929
+    std::vector< std::vector<float> > mat;Matrix::mat119,2943
+    Matrix(Matrix::Matrix122,2998
+    Matrix(Matrix::Matrix131,3196
+    ~Matrix(Matrix::~Matrix145,3570
+    int rows(Matrix::rows147,3594
+    int columns(Matrix::columns151,3646
+    float& at(Matrix::at155,3701
+    float& operator()(Matrix::operator()159,3768
+    void print(Matrix::print163,3841
+    Matrix inverse(Matrix::inverse173,4099
+    Matrix multiply(Matrix::multiply216,5391
+    double determinant(Matrix::determinant239,5955
+    Matrix transpose(Matrix::transpose269,6775
+    Matrix pinverse(Matrix::pinverse279,7036
+
+messageassert.h,50
+#   define assert(4,57
+#   define assert(13,385
+
+panorama.h,596
+#define __panorama__h2,23
+using namespace std;4,48
+typedef float (&array423)array42319,356
+typedef float (&array23)array2320,393
+class Point 26,569
+  int x,Point::x28,593
+  int x, y;Point::y28,593
+  ~Point(Point::~Point35,894
+class Feature 39,963
+  ~Feature(Feature::~Feature47,1311
+  Point *pt;Feature::pt49,1385
+  Image *dsc;Feature::dsc50,1399
+class Correspondance 54,1440
+  ~Correspondance(Correspondance::~Correspondance63,1821
+  Feature *f1,Correspondance::f165,1910
+  Feature *f1, *f2;Correspondance::f265,1910
+static const float color_init[color_init100,3588
